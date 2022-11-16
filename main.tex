@@ -1,0 +1,75 @@
+\documentclass[12pt, a4paper, twoside, openright]{report} %% -- oboustranné
+
+%% Promenne
+\newcommand\city{Pardubice}
+\newcommand\district{Pardubický kraj}
+\newcommand\specialization{Obor č. 18: Informatika}
+\newcommand\school{DELTA - Střední škola informatiky a ekonomie, s.r.o.}
+\newcommand\publicationYear{2023}
+\newcommand\mainTitle{Vymyslet nadpis}
+\newcommand\mainTitleEN{En Title}
+\newcommand\authorName{Jakub Kacálek, Jan Volhejn}
+\newcommand\consultant{}
+
+
+\title {\mainTitle}
+\author{\authorName}
+\date{\publicationYear}
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=3.5cm, right=1.5cm]{geometry} %% okraje
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{cmap}
+
+\usepackage{graphicx}
+
+\usepackage{subcaption}
+
+\usepackage{hyperref}
+
+\linespread{1.15}
+
+\usepackage[pagestyles]{titlesec} %% balíček pro úpravu stylu kapitol a sekcí
+\titleformat{\chapter}[block]{\scshape\bfseries\LARGE}{\thechapter}{10pt}{\vspace{0pt}}[\vspace{-22pt}]
+\titleformat{\section}[block]{\scshape\bfseries\Large}{\thesection}{10pt}{\vspace{0pt}}
+\titleformat{\subsection}[block]{\bfseries\large}{\thesubsection}{10pt}{\vspace{0pt}}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{1pt}
+
+\usepackage{booktabs}
+
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{pdfpages}
+
+\usepackage{upgreek}
+
+\usepackage{amsmath}    %% Balíčky amsmath a amsfonts 
+\usepackage{amsfonts}   %% pro sazbu matematických symbolů
+\usepackage{esint}     %% pro sazbu různých integrálů (např \oiint)
+\usepackage{mathrsfs}
+
+%% makra pro sazbu matematiky
+\newcommand{\dif}{\mathrm{d}} %% makro pro sazbu diferenciálu, místo toho
+%% abych musel psát '\mathrm{d}' mi stačí napsat '\dif' což je mnohem 
+%% kratší a mohu si tak usnadnit práci
+
+\begin{document}
+
+\pagestyle{empty}
+\pagenumbering{Roman}
+
+\input{texts/initial.tex}
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\setcounter{page}{1}
+
+\end{document}
