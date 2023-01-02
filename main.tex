@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper, twoside, openright]{report} %% -- oboustranné
+\documentclass[12pt, a4paper, oneside, openright]{report} %% -- jednostranna 
 
 %% Promenne
 \newcommand\city{Pardubice}
@@ -9,7 +9,7 @@
 \newcommand\mainTitle{Vymyslet nadpis}
 \newcommand\mainTitleEN{En Title}
 \newcommand\authorName{Jakub Kacálek, Jan Volhejn}
-\newcommand\consultant{}
+\newcommand\consultant{Bc. Vlaďka Janů}
 
 
 \title {\mainTitle}
@@ -68,8 +68,12 @@
 
 \input{texts/initial.tex}
 
+\tableofcontents
+
 \pagenumbering{arabic}
 \pagestyle{fancy}
 \setcounter{page}{1}
+
+\input{texts/chapters/main.tex}
 
 \end{document}
