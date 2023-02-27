@@ -1,0 +1,9 @@
+Redis - Wikipedia. https://en.wikipedia.org/wiki/Redis Accessed 2/27/2023.
+Introduction to Redis | Redis. https://redis.io/docs/about/ Accessed 2/27/2023.
+Redis. https://redis.io/ Accessed 2/27/2023.
+(1) Cache (computing) - Wikipedia. https://en.wikipedia.org/wiki/Cache_(computing) Accessed 2/27/2023.
+(2) How to Clear Internet Cache in Every Major Browser - Lifewire. https://www.lifewire.com/how-to-clear-cache-2617980 Accessed 2/27/2023.
+(3) Limpar o cache e os cookies - Computador - Ajuda da Conta do Google. https://support.google.com/accounts/answer/32050?hl=pt-BR&co=GENIE.Platform%3DDesktop Accessed 2/27/2023.
+(4) Clear cache & cookies - Computer - Google Account Help. https://support.google.com/accounts/answer/32050?hl=en&co=GENIE.Platform%3DDesktop Accessed 2/27/2023.
+(5) Cache leeren und Cookies löschen - Computer - Google-Konto-Hilfe. https://support.google.com/accounts/answer/32050?hl=de&co=GENIE.Platform%3DDesktop Accessed 2/27/2023.
+(6) Cache Definition & Meaning - Merriam-Webster. https://www.merriam-webster.com/dictionary/cache Accessed 2/27/2023.
