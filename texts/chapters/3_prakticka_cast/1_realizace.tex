@@ -11,3 +11,19 @@ Služba nabízí pro Dopravní podniky další způsob komunikace se svými cest
 \section{Backend}
 
 \section{Webová aplikace}
+
+Webová apliakce je hlavní částí platformy, která živá data o pohybu vozidel komunikuje k cestujícím.
+
+Využívá přitom komunikace s Backendem za pomocí REST + GRAPH QL API, vše za využití protokolů HTTPS, nebo WebSocket.
+
+\subsection{Zobrazování vozidel}
+K živému zobrazování dat je třeba několik kroků.
+
+Data jsou nejprve předána z Backendu pomocí GraphQL do aplikace klienta
+Následně jsou data přetransformována za účelem zobrazování živé animace pohybu.
+Pomocí frameworku React a jejich key id kktin jsou uchováávn aktuální stav DOM a při jejich následné aktualizaci nejdojde k jejich přepsání (tohle je asi na nějakej nadpis v teoretické části)
+Využitím interaktivní mapy Leaflet zobrazujeme pro uživatele předpověď pro aktuální pozici vozidel z přijatých dat.
+
+
+Webová aplikace ve formě jednotlivých služeb je tvořena z jedné Codebase (Engliš?) sdílená napříč dopravci, úpravy a případné vylepšení u jednoho dopravec jsme schopni ve formě modulu nasadit pro všechny dopravce
+
