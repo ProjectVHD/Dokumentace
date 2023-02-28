@@ -16,6 +16,11 @@ Webová apliakce je hlavní částí platformy, která živá data o pohybu vozi
 
 Využívá přitom komunikace s Backendem za pomocí REST + GRAPH QL API, vše za využití protokolů HTTPS, nebo WebSocket.
 
+
+
+Webová aplikace ve formě jednotlivých služeb je tvořena z jedné Codebase (Engliš?) sdílená napříč dopravci, úpravy a případné vylepšení u jednoho dopravec jsme schopni ve formě modulu nasadit pro všechny dopravce
+
+
 \subsection{Zobrazování vozidel}
 K živému zobrazování dat je třeba několik kroků.
 
@@ -25,5 +30,9 @@ Pomocí frameworku React a jejich key id kktin jsou uchováávn aktuální stav 
 Využitím interaktivní mapy Leaflet zobrazujeme pro uživatele předpověď pro aktuální pozici vozidel z přijatých dat.
 
 
-Webová aplikace ve formě jednotlivých služeb je tvořena z jedné Codebase (Engliš?) sdílená napříč dopravci, úpravy a případné vylepšení u jednoho dopravec jsme schopni ve formě modulu nasadit pro všechny dopravce
+\subsection{Detail spojení}
+Pro cestující zpracováváme data o jízdních řádech a nabízíme ve webové aplikaci možnost zobrazit si bližší detail o spojení, které vozidlo právě obsluhuje.
 
+Po stisknutí tlačítka se cestujícímu zobrazí blližší informace o spojení, jako je čas příjezdu k jednotlivým zastávkám spoje, nebo předpokládané zpoždění hlášené dopravcem.
+
+Tyto informace jsou k dispozici ve formátu JDF a do aplikace klienta předány pomocí GRAPHQL dotazu na Backend
