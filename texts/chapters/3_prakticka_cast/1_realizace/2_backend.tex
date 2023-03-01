@@ -1,0 +1,20 @@
+
+\section{Backend}
+
+\subsection{Využité technologie}
+golang, redis, mongo, docker, graphql, clouflare tunnels
+\subsection{několik služeb}
+postaveno na micro services, každá služba je samostatným docker kontejnerem
+\subsubsection{jednoduchost přidání dalšího dopravce}
+modularita
+\subsection {komunikace s datovými zdroji}
+data jizdnich řadu z cisjr
+\subsection {komunikace s jednotlivými podniky}
+každý dopravce má svůj vlastní přístup k datům
+\subsection {získávání dat spojů}
+přiřazení aktuálně jedoucích vozidel k odpovídajícím statickým spojům
+\subsection {cache}
+cache dat o poloze a nejčastějších spojích a zastávkách
+\subsection {graphql}
+Subscriptions a query
+\subsection{Nasazení na server}

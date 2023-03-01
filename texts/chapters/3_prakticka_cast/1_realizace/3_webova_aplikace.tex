@@ -1,15 +1,3 @@
-Platforma má za účel vytvořit jednoduchý způsob pro dopravní podniky o sdílení jejich dat o polohách vozidel.
-Cestující totiž v místech bez rozšířených struktur OpenData k těmto datům nemají přístup.
-
-Abychom mohli zlepšit život v těchto místech, soustředíme se na dopravní podniky, aby nám své data poskytly a zároveň tím zlepšili kvalitu živote v dané lokalitě.
-O implementaci webové aplikace se postaráme my a data příjmáme v jakémkoli formátu. (Protože nám stačí jen nějakej konektor, takže to je pro nás jednoduchý....)
-
-Služba nabízí pro Dopravní podniky další způsob komunikace se svými cestujícími o aktuálním dění. Pro dopravce služba nabízí možnost přidat provozní upozornění přímo do aplikace.
-
-\section{Architektura}
-
-\section{Backend}
-
 \section{Webová aplikace}
 
 Webová apliakce je hlavní částí platformy, která živá data o pohybu vozidel komunikuje k cestujícím.
@@ -29,10 +17,17 @@ Následně jsou data přetransformována za účelem zobrazování živé animac
 Pomocí frameworku React a jejich key id kktin jsou uchováávn aktuální stav DOM a při jejich následné aktualizaci nejdojde k jejich přepsání (tohle je asi na nějakej nadpis v teoretické části)
 Využitím interaktivní mapy Leaflet zobrazujeme pro uživatele předpověď pro aktuální pozici vozidel z přijatých dat.
 
+\subsubsection{optimalizace výkonu}
 
 \subsection{Detail spojení}
 Pro cestující zpracováváme data o jízdních řádech a nabízíme ve webové aplikaci možnost zobrazit si bližší detail o spojení, které vozidlo právě obsluhuje.
 
 Po stisknutí tlačítka se cestujícímu zobrazí blližší informace o spojení, jako je čas příjezdu k jednotlivým zastávkám spoje, nebo předpokládané zpoždění hlášené dopravcem.
 
-Tyto informace jsou k dispozici ve formátu JDF a do aplikace klienta předány pomocí GRAPHQL dotazu na Backend
+Tyto informace jsou k dispozici ve formátu JDF a do aplikace klienta předány pomocí GRAPHQL dotazu na Backend.
+
+\subsection{Provozní upozornění}
+Dopravci mohou přidávat do aplikace klienta provozní upozornění, které se zobrazí v případě, že se vyskytne nějaká situace, která může mít vliv na cestu cestujícího.
+\subsection{Práce s polohou uživatele}
+\subsection{Monitorování návštěvnosti}
+\subsection{PWA}
