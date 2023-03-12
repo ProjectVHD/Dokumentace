@@ -1,16 +1,20 @@
 
 \section{Backend}
-
+Backendová část projektu má za úkol získat data od jednotlivých dopravních podniků, získat data z Celostátního informačního systému o jízdních řádech\cite{cisjr} a za pomoci GraphQL je zprostředkovat frontendové části.
 \subsection{Využité technologie}
-golang, redis, mongo, docker, graphql, clouflare tunnels
+Backendová část projektu je napsaná v programovacího jazyka GO. Routovaní zajišťuje jednoduchá knihovna Chi-go. Hlavním endpointem celé aplikace je "/query", za který odpovídá GraphQL, jenž se stará o dotazy a subscriptions. Díky využití GraphQL subscriptions je frontend schopen zobrazovat data v téměř reálném čase.\par
+
+/*golang, redis, mongo, docker, graphql, clouflare tunnels*/
 \subsection{několik služeb}
-postaveno na micro services, každá služba je samostatným docker kontejnerem
+Samotný backend je rozdělen na několik menších částí, které mají za úkol jiné operace. Tato návrhová architektura se nazývá mikroslužby (microservices). Podle vyhlášky\cite{vyhlaskaJizdniRady} musí jednotlivé dopravní podniky zveřejňovat jízdní řády spojů. Jedna microservice se zabývá stahováním a zpracováváním těchto dat. \par
+V aktuální době však neexistuje žádné podobné nařízení, které by upravovalo zveřejňování dat o aktuálních polohách vozidel. Nejednotnost těchto dat znamená, že pro každý dopravní podnik musela být vytvořena microservice s individuálním konektorem. Poslední důležitou službou je samotná komunikace s frontendovou částí.
 \subsubsection{jednoduchost přidání dalšího dopravce}
 modularita
 \subsection {komunikace s datovými zdroji}
-data jizdnich řadu z cisjr
+/*data jizdnich řadu z cisjr*/
 \subsection {komunikace s jednotlivými podniky}
-každý dopravce má svůj vlastní přístup k datům
+/*V aktuální době však neexistuje žádné podobné nařízení, které by upravovalo zveřejňování dat o aktuálních polohách vozidel. Jednostlivé dopravní podniky však mají většinou dispečink, ze kterého mohou aktuální polohu vozidel monitorovat. Existence dopravních dispečinků napovídá že tato
+každý dopravce má svůj vlastní přístup k datům*/
 \subsection {získávání dat spojů}
 přiřazení aktuálně jedoucích vozidel k odpovídajícím statickým spojům
 \subsection {cache}
