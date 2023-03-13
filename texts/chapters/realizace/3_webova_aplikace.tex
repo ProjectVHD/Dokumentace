@@ -17,9 +17,13 @@ Mapu lze ovládat na mobilních zařízeních díky pohybům prsem, nebo na stol
 K živému zobrazování dat je třeba několik kroků.
 
 Data jsou nejprve předána z Backendu pomocí GraphQL do aplikace klienta
-Následně jsou data přetransformována za účelem zobrazování živé animace pohybu.
-Pomocí frameworku React a jejich key id kktin jsou uchováávn aktuální stav DOM a při jejich následné aktualizaci nejdojde k jejich přepsání (tohle je asi na nějakej nadpis v teoretické části)
-Využitím interaktivní mapy Leaflet zobrazujeme pro uživatele předpověď pro aktuální pozici vozidel z přijatých dat.
+Z těchto dat je v aplikaci vytvořena plynulá animace pohybu vozidla v reálném čase.
+Aplikace využívá interaktivní mapy Leaflet zobrazujeme pro uživatele předpověď pro aktuální pozici vozidel z přijatých dat.
+
+
+
+\subsection{Cache}
+Data prostřednictvím dotazování Backendu jsou na straně cestujícího ukládána do cache, aby již nebylo třeba tato data opakovaně načítat. Cache na straně webové aplikace šetří uživatelům jejich datové připojení a zároveň snižují nároky na vytěžování serveru.
 
 \subsection{Detail spojení}
 Pro cestující zpracováváme data o jízdních řádech a nabízíme ve webové aplikaci možnost zobrazit si bližší detail o spojení, které vozidlo právě obsluhuje.
@@ -31,14 +35,9 @@ Tyto informace jsou k dispozici ve formátu JDF a do aplikace klienta předány 
 \subsection{Provozní upozornění}
 Dopravci mohou přidávat do aplikace klienta provozní upozornění, které se zobrazí v případě, že se vyskytne nějaká situace, která může mít vliv na cestu cestujícího.
 \subsection{Práce s polohou uživatele}
+Aplikace na požádání od uživatele získá jeho aktuální polohu a pro cestujícího v zobrazí zastávky v jeho blízkosti.
 \subsection{Monitorování návštěvnosti}
 Zajímavou funkcí pro dopravce je monitorování návštěvnosti aplikace za pomocí Google Analytics. Pro získávání přesných dat o užitečných a oblíbených funkcích aplikace využíváme monitorování vlastních událostí, např. při otevření detailu spoje, nebo vyhledání detailu zastávky.
 \subsection{PWA}
-
- /// část do technologíí
-Technologie PWA (Progresivní webová aplikace) je technologická novinka. Do budoucna by se měla stát jednou z nejlepších možností vývoje aplikací. (Tady se mega hodí nějakej random článek jako zdroj)
-Tuto technologii jsme se rozhodli využít díky její možnosti adaptace do všech zařízení s moderními webovými prohlížeči.
-
- /// čast do realizace
 Aplikace využívá experimentálních funkcí nové technologie PWA (Progresivní webové aplikace) jako je například načítání GPS souřadnice uživatele, zobrazování notifikací, nastavení připomínky na přijíždějící spoj.
 Funkce PWA zároveň nabízí stahování map do zařízení, aby nemuseli být při každém spuštění znovu stahovány.
