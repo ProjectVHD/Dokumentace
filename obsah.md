@@ -8,8 +8,8 @@ Odborna prace obsahuje navrh a reseni platformy, umoznujici Dopravnim podnikum a
 
 Za timto ucelem vznikla architektura modularni platformy, kterou lze videt na diagramu.
 
-[CIS] -------- [Backend] ------- [WebovaAplikace] ---- [Cestujici]
-             |          |
+[CIS] --------           ------- [WebovaAplikace] ---- [Cestujici]
+             | [Backend] |
 [DPMP] -------           ------- [Administrace]  ----- [Dispecink]
 
 ## Dostupna reseni / konkurence
