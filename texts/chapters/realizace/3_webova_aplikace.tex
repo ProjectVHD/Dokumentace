@@ -23,9 +23,13 @@ K živému zobrazování dat je třeba několik kroků.
 Data jsou nejprve předána z Backendu pomocí GraphQL do aplikace klienta
 Z těchto dat je v aplikaci vytvořena plynulá animace pohybu vozidla v reálném čase.
 Aplikace využívá interaktivní mapy Leaflet zobrazujeme pro uživatele předpověď pro aktuální pozici vozidel z přijatých dat.
-\par
-/* obrázek celé mapy */\par
-/* obrázek červené cesty spoje i se zastávkami */
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/Screenshot from 2023-03-18 20-15-00.png}
+    \caption{Ukázka části mapy}
+    \label{mapa}
+\end{figure}
 \subsection{Cache}
 Data prostřednictvím dotazování Backendu jsou na straně cestujícího ukládána do cache, aby již nebylo třeba tato data opakovaně načítat.
 Cache na straně webové aplikace šetří uživatelům jejich datové připojení a zároveň snižují nároky na vytěžování serveru.
@@ -34,26 +38,41 @@ Cache na straně webové aplikace šetří uživatelům jejich datové připojen
 Pro cestující zpracováváme data o jízdních řádech a nabízíme ve webové aplikaci možnost zobrazit si bližší detail o spojení, které vozidlo právě obsluhuje.
 Po stisknutí tlačítka se cestujícímu zobrazí bližší informace o spojení, jako je čas příjezdu k jednotlivým zastávkám spoje, nebo předpokládané zpoždění hlášené dopravcem.
 
-Současně s zobrazením bližších informací v aplikaci zobrazujeme grafickou reprezentaci trasy, kterou vozidlo podstoupí.
-Pro tento účel jsme využili možností Google Maps API, Snap To Roads. Ze známých GPS souřadnic zástávek, které vozidlo obslouží API Snap To Roads vyhledá spojení silnic mezi zastávkami.
-
-\par
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{images/global_pce_con_detail_7.png}
     \caption{Detail linky 7}
+    \label{detal7}
+\end{figure}
 
+Současně s zobrazením bližších informací o spoji se zobrazuje také grafická reprezentace trasy, kudy daný spoj pojede.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/krom_line_6.png}
+    \caption{Detail trasy v Kroměříži}
+    \label{trasa}
 \end{figure}
 
 \subsection{Provozní upozornění}
 Dopravci mohou přidávat do aplikace klienta provozní upozornění, které se zobrazí v případě, že se vyskytne nějaká situace, která může mít vliv na cestu cestujícího.\par
-
 Za tímto účelem vzniklo uživatelské prostředí pro dispečink dopravce.
-/* obrázek provozního upozornění */
+\par
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/global_arriva_event.png}
+    \caption{Ukázka provozního upozornění}
+    \label{upozorneni}
+\end{figure}
 \subsection{Práce s polohou uživatele}
 Aplikace na požádání od uživatele získá jeho aktuální polohu a pro cestujícího v zobrazí zastávky v jeho blízkosti.
 
-/* obrázek aktuální polohy uživatele */
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/position.png}
+    \caption{Ukázka polohy uživatele}
+    \label{poloha}
+\end{figure}
 \subsection{Monitorování návštěvnosti}
 Zajímavou funkcí pro dopravce je monitorování návštěvnosti aplikace za pomocí Google Analytics. Pro získávání přesných dat o užitečných a oblíbených funkcích aplikace využíváme monitorování vlastních událostí, např. při otevření detailu spoje, nebo vyhledání detailu zastávky.
 \subsection{Aplikace a web}
