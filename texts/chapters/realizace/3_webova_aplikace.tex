@@ -18,12 +18,7 @@ Pro přehlednost mapa implementuje funkci shlukování vozidel do bublin. Shluko
 Při vzdáleném pohledu je funkce plynulé animace pohybu vozidel vypnuta.
 
 \subsection{Zobrazování vozidel}
-K živému zobrazování dat je třeba několik kroků.
-
-Data jsou nejprve předána z Backendu pomocí GraphQL do aplikace klienta
-Z těchto dat je v aplikaci vytvořena plynulá animace pohybu vozidla v reálném čase.
-Aplikace využívá interaktivní mapy Leaflet zobrazujeme pro uživatele předpověď pro aktuální pozici vozidel z přijatých dat.
-
+K živému zobrazování dat se využívá GraphQL subscription "GetVehicles", díky které z backendu automaticky přijde zpráva s aktuálními daty. Tato data však mívají rozestup 10 sekund, proto se animace plynulého přechodu dopočítává. Jednotlivá data vozidel jsou rozdělena podle dopravců, subscription se tedy upravuje podle toho, kam se uživatel zrovna dívá.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/Screenshot from 2023-03-18 20-15-00.png}
@@ -35,17 +30,16 @@ Data prostřednictvím dotazování Backendu jsou na straně cestujícího uklá
 Cache na straně webové aplikace šetří uživatelům jejich datové připojení a zároveň snižují nároky na vytěžování serveru.
 
 \subsection{Detail spojení}
-Pro cestující zpracováváme data o jízdních řádech a nabízíme ve webové aplikaci možnost zobrazit si bližší detail o spojení, které vozidlo právě obsluhuje.
-Po stisknutí tlačítka se cestujícímu zobrazí bližší informace o spojení, jako je čas příjezdu k jednotlivým zastávkám spoje, nebo předpokládané zpoždění hlášené dopravcem.
+Uživatel má po kliknutí na jedoucí spoj k dispozici základní informace o tomto spoji, číslo linky zpoždění, další zastávka a cílová zastávka. Toto vše je vždy individálně upravitelné pro každý dopravní podnik. Po rozkliknutí bližšího detailu o spojení, se uživateli zobrazí dodatečné informace viz obr.\ref{detail7}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{images/global_pce_con_detail_7.png}
     \caption{Detail linky 7}
-    \label{detal7}
+    \label{detail7}
 \end{figure}
 
-Současně s zobrazením bližších informací o spoji se zobrazuje také grafická reprezentace trasy, kudy daný spoj pojede.
+Současně s zobrazením bližších informací o spoji se zobrazuje také grafická reprezentace trasy, kudy daný spoj pojede, včetně zobrazení zastávek.
 
 \begin{figure}[H]
     \centering
