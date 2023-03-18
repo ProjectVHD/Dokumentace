@@ -10,20 +10,24 @@ Samotný backend využívá návrhovou architekturu mikroslužeb (microservices)
 \subsection [Jízdní řády]{Strojové čtení jízdních řádů} \label{strojoveCteniJR}
 Podle vyhlášky\cite{vyhlaskaJizdniRady} musí jednotlivé dopravní podniky zveřejňovat jízdní řády spojů. Jedna microservice se zabývá stahováním a zpracováváním těchto dat. \par
 Každý dopravní podnik má povinnost zveřejňovat své jízdní řády pro strojové čtení. Tyto data dopravní podniky publikují prostřednictvím Celostátního informačního systému o jízdních řádech(CISJŘ)\cite{cisjr}. Tento systém spravuje firma CHAPS spol. s.r.o.\cite{chaps}. Výstupem CISJŘ je veřejně přístupný ftp server na adrese 'ftp://ftp.cisjr.cz'. Data jsou zveřejňována ve formátu JDF \ref{JDF} a jsou zazipována. \par
-Ze struktury a dat těchto souborů mikroslužba pro zpracování jízdních řádů vytvoří v databázovém systému MongoDB \ref{mongo} dokumenty jednotlivých spojení veřejné dopravy. Tento dokument obsahuje informace o příjezdech a odjezdech ze zastávek, jejich pevné kódy, typ vozidla a další. Jednotlivé spojení veřejné dopravy jsou jednoznačně identifikavatelná za pomoci kombinace čísla linky a čísla spoje.
-\subsection {komunikace s jednotlivými podniky}
-/*V aktuální době však neexistuje žádné podobné nařízení, které by upravovalo zveřejňování dat o aktuálních polohách vozidel. Jednostlivé dopravní podniky však mají většinou dispečink, ze kterého mohou aktuální polohu vozidel monitorovat. Existence dopravních dispečinků napovídá že tato
-každý dopravce má svůj vlastní přístup k datům*/
-\subsubsection{jednoduchost přidání dalšího dopravce}
-\subsection {získávání dat spojů}
-přiřazení aktuálně jedoucích vozidel k odpovídajícím statickým spojům
+Ze struktury a dat těchto souborů mikroslužba pro zpracování jízdních řádů vytvoří v databázovém systému MongoDB \ref{mongo} dokumenty jednotlivých spojení veřejné dopravy. Tento dokument obsahuje informace o příjezdech a odjezdech ze zastávek, jejich pevné kódy, typ vozidla a další. Jednotlivé spojení veřejné dopravy jsou jednoznačně identifikovatelná za pomoci kombinace čísla linky a čísla spoje.
+\subsection {Data dopravních podniků}
+Dopravní podniky z pravidla využívají data o aktuální poloze vozidel pouze pro interní použití na dopravních dispečincích. Tato data nejsou nijak upravována nařízeními nebo vyhláškami, což znamená že nejsou sjednocená pravidla mezi podniky, jak by tato data měli vypadat.\par
+Ze strany této aplikace to znamená nutnost implementace individuální mikroservisy pro každý dopravní podnik. Úkolem těchto mikroservis je získání dat o aktální poloze vozidel a jejich zpracování do jednostného formátu pro použití. Data jsou poté ukládána do datového úložiště Redis\ref{redis}, které funguje jako cache\ref{cache},  pro následné čtení hlavní mikroservisou.\par
+Od dopravních podniků
+Informace o poloze spoje se také ukládá v kontextu celé trasy, což umožňuje cestujícím vidět přesnou trasu spoje, včetně informací o zastávkách.
+%\subsubsection{jednoduchost přidání dalšího dopravce}
+%\subsection {získávání dat spojů}
+
+
+%/*přiřazení aktuálně jedoucích vozidel k odpovídajícím statickým spojům*/
 \subsection {cache}
-cache dat o poloze a nejčastějších spojích a zastávkách
-\subsection {graphql}
+
+\subsection {graphql}\label{mainBackend}
 Poslední službou, je služba, která má za úkol poskytovat všechna získaná data frontendové části. K tomuto úkolu bylo nasazeno rozhraní GraphQL. Správné využití GraphQL zabraňuje přebytečnému stahování velkého množství dat, a pomáhá ke zjednodušení komunikace.\par
 Hlavními informacemi které backend poskytuje frontendové části, jsou aktuální polohy vozidel. K tomuto účelu slouží subscription 'GetVehicles', která každých 10 sekund pošle nová data.\par
-Pro získání dodatečných informací o spoji slouží query "GetConnectionDetail", které potřebuje dva argumenty, číslo linky "line\_name" \
-a číslo spoje "connection\_number", k jedinečné identifikaci spoje.\par
+Pro získání dodatečných informací o spoji slouží query "GetConnectionDetail" a "GetRoads", které potřebují dva argumenty, číslo linky "line\_name" \ a číslo spoje "connection\_number", k jedinečné identifikaci spoje.\par
+K získání budoucích odjezdů ze zastávek slouží query "GetStationConnections", která potřebuje jako argument IDzastávky a vrací zpět spoje které v přístích 45 minutách projedou danou zastávkou.
 \subsection{Nasazení na server}
 Platforma je nasazena za pomoci kontejnerizace. Kontejnerizace nám zaručuje identické prostředí, které obsahuje pouze nezbitná data k běhu jednotlivých mikroservis.\par
 Pro vytvoření kontejnerů je použit Docker. Proces vytváření jednotlivých kontejnerů zahrnuje použití souboru "Dockerfile", který přesně popisuje jednotlivé kroky k sestavení.\par
