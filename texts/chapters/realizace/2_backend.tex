@@ -25,4 +25,6 @@ Hlavními informacemi které backend poskytuje frontendové části, jsou aktuá
 Pro získání dodatečných informací o spoji slouží query "GetConnectionDetail", které potřebuje dva argumenty, číslo linky "line\_name" \
 a číslo spoje "connection\_number", k jedinečné identifikaci spoje.\par
 \subsection{Nasazení na server}
-Platforma je nasazena na
+Platforma je nasazena za pomoci kontejnerizace. Kontejnerizace nám zaručuje identické prostředí, které obsahuje pouze nezbitná data k běhu jednotlivých mikroservis.\par
+Pro vytvoření kontejnerů je použit Docker. Proces vytváření jednotlivých kontejnerů zahrnuje použití souboru "Dockerfile", který přesně popisuje jednotlivé kroky k sestavení.\par
+K následnému nasazení je využíván docker-compose, který umožňuje definovat služby (jednotlivé mikroservices, mongoDB, redis) a komunikaci mezi službami. Pro definování služeb se využívá soubor "docker-compose.yaml", který poté dovoluje spravovat všechny kontejnery pomocí jediného příkazu.
