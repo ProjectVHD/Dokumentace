@@ -10,12 +10,17 @@ Webová aplikace využívá za svého chodu spoustu doplňujících dotazů pře
 Webová stránka díky tomu odpovídá jednostránkové aplikaci s ovládacími prvky.
 
 \subsection{Mapa}
-Byla vytvořena webová aplikace pro zobrazování aktuálních poloh vozidel dopravních podniků a jiných dopravců.
-Na jednotné mapě zobrazujeme všechny dopravce, se kterými spolupracujeme.
-Mapu lze ovládat na mobilních zařízeních díky pohybům prsem, nebo na stolních počítačích myší. Podle uživatelského pohledu aplikace vybere dopravce, které by měla zobrazovat a dochází zde k optimalizaci přenášených dat. Do zařízení uživatele jsou přenášeny pouze polohy vozidel, které na mapě vidí.
+Na jednotné mapě se zobrazují všechni dopravci.
+Mapu lze ovládat na mobilních zařízeních pohyby prsty, nebo na stolních počítačích myší. Podle uživatelského pohledu aplikace vybere dopravce, které by měla zobrazovat a dochází zde k optimalizaci přenášených dat. Do zařízení uživatele jsou přenášeny pouze polohy vozidel, které na mapě vidí.
 
 Pro přehlednost mapa implementuje funkci shlukování vozidel do bublin. Shlukování do bublin zajistí v aplikaci přehlednost a plní i funkci optimalizace výkonu mapy.
 Při vzdáleném pohledu je funkce plynulé animace pohybu vozidel vypnuta.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{images/global_map.png}
+    \caption{Ukázka shlukování vozidel na mapě}
+    \label{shlukovani}
+\end{figure}
 
 \subsection{Zobrazování vozidel}
 K živému zobrazování dat se využívá GraphQL\ref{graphql} subscription "GetVehicles", díky které z backendu automaticky přijde zpráva s aktuálními daty. Tato data však mívají rozestup 10 sekund, proto se animace plynulého přechodu dopočítává. Jednotlivá data vozidel jsou rozdělena podle dopravců, subscription\ref{websocket} se tedy upravuje podle toho, kam se uživatel zrovna dívá.

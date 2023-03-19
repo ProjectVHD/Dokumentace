@@ -17,17 +17,13 @@ Od dopravních podniků
 Informace o poloze spoje se také ukládá v kontextu celé trasy, což umožňuje cestujícím vidět přesnou trasu spoje, včetně informací o zastávkách.
 %\subsubsection{jednoduchost přidání dalšího dopravce}
 %\subsection {získávání dat spojů}
-
-
 %/*přiřazení aktuálně jedoucích vozidel k odpovídajícím statickým spojům*/
-\subsection {cache}
-
-\subsection {graphql}\label{mainBackend}
+\subsection {Komunikace s frontendem}\label{mainBackend}
 Poslední službou, je služba, která má za úkol poskytovat všechna získaná data frontendové části. K tomuto úkolu bylo nasazeno rozhraní GraphQL. Správné využití GraphQL zabraňuje přebytečnému stahování velkého množství dat, a pomáhá ke zjednodušení komunikace.\par
-Hlavními informacemi které backend poskytuje frontendové části, jsou aktuální polohy vozidel. K tomuto účelu slouží subscription 'GetVehicles', která každých 10 sekund pošle nová data.\par
-Pro získání dodatečných informací o spoji slouží query "GetConnectionDetail" a "GetRoads", které potřebují dva argumenty, číslo linky "line\_name" \ a číslo spoje "connection\_number", k jedinečné identifikaci spoje.\par
+Hlavními informacemi které backend poskytuje frontendové části, jsou aktuální polohy vozidel. K tomuto účelu slouží subscription "GetVehicles", která každých 10 sekund pošle nová data.\par
+Pro získání dodatečných informací o spoji slouží query "\mbox{GetConnectionDetail}" \newline a~"\mbox{GetRoads}", které potřebují dva argumenty, číslo linky "\mbox{line\_name}" \newline a číslo spoje "\mbox{connection\_number}", k jedinečné identifikaci spoje.\par
 K získání budoucích odjezdů ze zastávek slouží query "GetStationConnections", která potřebuje jako argument IDzastávky a vrací zpět spoje které v přístích 45 minutách projedou danou zastávkou.
 \subsection{Nasazení na server}
-Platforma je nasazena za pomoci kontejnerizace. Kontejnerizace nám zaručuje identické prostředí, které obsahuje pouze nezbitná data k běhu jednotlivých mikroservis.\par
+Platforma je nasazena za pomoci kontejnerizace. Kontejnerizace nám zaručuje identické prostředí, které obsahuje pouze nezbytná data k běhu jednotlivých mikroservis.\par
 Pro vytvoření kontejnerů je použit Docker. Proces vytváření jednotlivých kontejnerů zahrnuje použití souboru "Dockerfile", který přesně popisuje jednotlivé kroky k sestavení.\par
 K následnému nasazení je využíván docker-compose, který umožňuje definovat služby (jednotlivé mikroservices, mongoDB, redis) a komunikaci mezi službami. Pro definování služeb se využívá soubor "docker-compose.yaml", který poté dovoluje spravovat všechny kontejnery pomocí jediného příkazu.
