@@ -2,8 +2,6 @@
 Backendová část projektu má za úkol získat data od jednotlivých dopravních podniků, získat data z Celostátního informačního systému o jízdních řádech\cite{cisjr} a za pomoci GraphQL je zprostředkovat frontendové části.
 \subsection{Využité technologie}
 Backendová část projektu je napsaná v programovacího jazyka GO. Routovaní zajišťuje jednoduchá knihovna Chi-go. Hlavním endpointem celé aplikace je "/query", za který odpovídá GraphQL, jenž se stará o dotazy a subscriptions. Díky využití GraphQL subscriptions je frontend schopen zobrazovat data v téměř reálném čase. Jako hlavní databázový systém byl využit MongoDB\ref{mongo}, kvůli flexibilitě a rychlé škálovatelnosti. Pro zrychlení opakujících se operací, aplikace využívá Redis\ref{redis} jako rycle dostupnou cache\ref{cache}. \par
-
-/*golang, redis, mongo, docker, graphql, clouflare tunnels*/
 \subsection{Služby}
 Samotný backend využívá návrhovou architekturu mikroslužeb (microservices). Je rozdělen na několik menších částí, které mají za úkol jiné operace. První mikroslužba se zabývá stahováním a zpracováváním dat pro strojové čtení jízdních řádů, tato data se díky vyhlášce\cite{vyhlaskaJizdniRady} nacházejí na jednotném serveru, na toto téma dále \ref{strojoveCteniJR}. V aktuální době však neexistuje žádné podobné nařízení, které by upravovalo zveřejňování dat o aktuálních polohách vozidel. Nejednotnost těchto dat znamená, že pro každý dopravní podnik musela být vytvořena mikroslužba s individuálním konektorem. Poslední důležitou službou je samotná komunikace s frontendovou částí.
 \subsection [Jízdní řády]{Strojové čtení jízdních řádů} \label{strojoveCteniJR}
