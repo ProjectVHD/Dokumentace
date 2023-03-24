@@ -1,3 +1,4 @@
+\newpage
 \section{Backend}
 Backendová část projektu má za~úkol získat data od~jednotlivých dopravních podniků, získat a zpracovat data o~jízdních řádech \cite{cisjr} a~za~pomoci GraphQL je zprostředkovat frontendové části.
 \subsection{Využité technologie} Backendová část projektu je napsaná v~programovacím jazyku GO. Routovaní zajišťuje jednoduchá knihovna Chi-go. Hlavním endpointem celé aplikace je “\query{/query}“, za~který odpovídá GraphQL, jenž se~stará o~dotazy a~subscriptions. Díky využití GraphQL subscriptions je frontend schopen zobrazovat data v~téměř reálném čase. Jako hlavní databázový systém byl využit MongoDB \ref{mongo}, kvůli flexibilitě a~rychlé škálovatelnosti. Pro zrychlení opakujících se~operací, aplikace využívá Redis \ref{redis} jako rychle dostupnou cache \ref{cache}. \par
@@ -16,6 +17,7 @@ Poslední microservice, má za~úkol poskytovat všechna získaná data frontend
 Hlavními informacemi které backend poskytuje frontendové části, jsou aktuální polohy vozidel. K~tomuto účelu slouží subscription „\query{GetVehicles}“, která každých 10~sekund pošle nová data.\par
 Pro získání dodatečných informací o~spoji slouží query “\query{GetConnectionDetail}“ \newline a~“\query{GetRoads}“, které potřebují dva argumenty, číslo linky “\query{line\_name}“ \newline a~číslo spoje “\query{connection\_number}“, k~jedinečné identifikaci spoje.\par
 K~získání budoucích odjezdů ze~zastávek slouží query „\query{GetStationConnections}“, která potřebuje jako argument “\query{IDzastávky}“ a~vrací zpět spoje které v~přístích 45~minutách projedou danou zastávkou.
+\newpage
 \subsection{Nasazení na~server}
 Platforma je nasazena za~pomoci kontejnerizace. Kontejnerizace nám zaručuje identické prostředí, které obsahuje pouze nezbytná data k~běhu jednotlivých mikroservis.\par
 Pro vytvoření kontejnerů se~využívá Docker. Proces vytváření jednotlivých kontejnerů zahrnuje použití souboru „\query{Dockerfile}“, který přesně popisuje jednotlivé kroky k~sestavení.\par

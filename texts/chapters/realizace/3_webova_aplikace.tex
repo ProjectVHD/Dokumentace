@@ -11,7 +11,7 @@ Vývojový model webové aplikace dopovídá programovacímu paradigma jednostr�
 \subsection{Mapa}
 Na jednotné mapě se~zobrazují všechni dopravci. Mapu lze ovládat na~mobilních zařízeních pohyby prsty, nebo na~stolních počítačích myší. Podle uživatelského pohledu aplikace vybere dopravce, které by měla zobrazovat, čímž redukuje objem přenášených dat. Do~zařízení uživatele jsou přenášeny pouze data o~vozidlech, které uživatel sleduje.
 
-Pro přehlednost mapa implementuje funkci shlukování vozidel do~bublin. Shlukování do~bublin zajistí v~aplikaci přehlednost a~plní i~funkci optimalizace výkonu mapy. Při vzdáleném pohledu je funkce plynulé animace pohybu vozidel vypnuta.
+Pro přehlednost mapa implementuje funkci shlukování vozidel do~bublin (viz obr. \ref{shlukovani}) Shlukování do~bublin zajistí v~aplikaci přehlednost a~plní i~funkci optimalizace výkonu mapy. Při vzdáleném pohledu je funkce plynulé animace pohybu vozidel vypnuta.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/global_map.png}
@@ -78,6 +78,7 @@ Aplikace na~požádání od~uživatele získá jeho aktuální polohu a~pro cest
     \caption{Ukázka polohy uživatele}
     \label{poloha}
 \end{figure}
+\newpage
 \subsection{Monitorování návštěvnosti}
 Zajímavou funkcí pro dopravce je monitorování návštěvnosti aplikace za~pomocí Google Analytics. Pro získávání přesných dat o~užitečných a~oblíbených funkcích aplikace využíváme monitorování vlastních událostí, např. při~otevření detailu spoje, nebo vyhledání detailu zastávky.
 \subsection{Aplikace a~web}
