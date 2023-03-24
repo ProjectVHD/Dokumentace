@@ -6,5 +6,5 @@ Tento projekt se~snaží o~řešení těchto bodů. Zde jsou některá navržen�
 \begin{itemize}
     \item \textbf{Kryptografické selhání} \cite{crypto}: Backendová i~frontendová část projektu využívají komunikace pomocí šifrovaného protokolu HTTPS. Certifikáty jsou podepsané certifikačními autoritami Let's~Encrypt a~Google Trusted Services.
     \item \textbf{Injection} \cite{nosqlinjection}: Při práci s uživatelským vstupem je důležitá sanitizace.
-    \item \textbf{Magic Link Login} \cite{magiclinklogin}: Uživatelé se nepřihlašují pomocí obvyklé kombinace jméno - heslo. Při přihlášení zadávají pouze svůj email. Na tento email je jim následně odeslán časově omezený klíč pro jednorázové přihlášení.
+    \item \textbf{Magic Link Login} \cite{magiclinklogin}: Uživatelé se nepřihlašují pomocí obvyklé kombinace jméno - heslo. Při přihlášení zadávají pouze svůj email. Na tento email je jim následně odeslán časově omezený klíč pro jednorázové přihlášení. Dochází k eliminaci hrozby uniknutí hesla, jelikož není nikde uloženo.
 \end{itemize}
