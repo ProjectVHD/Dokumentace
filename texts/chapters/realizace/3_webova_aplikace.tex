@@ -27,12 +27,12 @@ K~živému zobrazování dat se~využívá GraphQL subscription „GetVehicles�
     \label{mapa}
 \end{figure}
 
-Pro dosažení plynulosti zobrazování využívá aplikace nejlepších praktik pro práci s~frameworkem ReactJS \ref{reactjs}. Časování animace přenechává aplikace webovému prohlížeči uživatele, využívá totiž Webového rozhraní Window.requestAnimationFrame() \cite{animationframe}, které zajišťuje vytváření nových snímků ve~vhodné frekvenci.
+Pro dosažení plynulosti zobrazování využívá aplikace předepsaných praktik pro práci s~frameworkem ReactJS \ref{reactjs}. Časování animace přenechává aplikace webovému prohlížeči uživatele, využívá totiž Webového rozhraní Window.requestAnimationFrame() \cite{animationframe}, které zajišťuje vytváření nových snímků ve~vhodné frekvenci.
 \subsection{Cache}
-Data prostřednictvím dotazování Backendu jsou na~straně cestujícího ukládána do~cache, aby již nebylo třeba tato data opakovaně načítat. Cache \ref{cache} na~straně webové aplikace šetří uživatelům jejich datové připojení a~zároveň snižují nároky na~vytěžování serveru.
+Informace o detailech spojení jsou na~straně cestujícího ukládána do~cache, aby již nebylo třeba tato data opakovaně načítat. Cache \ref{cache} na~straně webové aplikace šetří uživatelům jejich datové připojení a~zároveň snižují nároky na~vytěžování serveru.
 
 \subsection{Detail spojení}
-Uživatel má po~kliknutí na~jedoucí spoj k~dispozici základní informace o~tomto spoji, viz obr. \ref{detail332}, číslo linky zpoždění, další zastávka a~cílová zastávka. Toto vše je vždy individálně upravitelné pro každý dopravní podnik. Po~rozkliknutí bližšího detailu o~spojení, se~uživateli zobrazí dodatečné informace viz obr. \ref{detail7}
+Uživatel má po~kliknutí na~jedoucí spoj k~dispozici základní informace o~tomto spoji, např. číslo linky, zpoždění, další zastávka, nebo cílová zastávka (viz obr.\ref{detail332}). Toto vše je vždy individálně upravitelné pro každý dopravní podnik. Po~rozkliknutí bližšího detailu o~spojení, se~uživateli zobrazí dodatečné informace (viz obr.\ref{detail7})
 
 \begin{figure}[H]
     \centering
@@ -81,6 +81,6 @@ Aplikace na~požádání od~uživatele získá jeho aktuální polohu a~pro cest
 \subsection{Monitorování návštěvnosti}
 Zajímavou funkcí pro dopravce je monitorování návštěvnosti aplikace za~pomocí Google Analytics. Pro získávání přesných dat o~užitečných a~oblíbených funkcích aplikace využíváme monitorování vlastních událostí, např. při~otevření detailu spoje, nebo vyhledání detailu zastávky.
 \subsection{Aplikace a~web}
-Aplikace využívá experimentálních funkcí technologie PWA \ref{pwa} jako je například načítání GPS souřadnice uživatele, zobrazování notifikací, nastavení připomínky na~přijíždějící spoj. Funkce PWA zároveň nabízí stahování map do~zařízení, aby nemuseli být při každém spuštění znovu stahovány.
+Aplikace využívá experimentálních funkcí technologie PWA \ref{pwa} jako je například načítání GPS souřadnic uživatele, zobrazování notifikací, nastavení připomínky na~přijíždějící spoj. Funkce PWA zároveň nabízí stahování map do~zařízení, aby nemusely být při každém spuštění znovu stahovány.
 
 Díky technologii PWA je webové aplikaci umožněno využít vnitřního uložiště zařízení pro ukládání dat o~mapách, a~tím je možné ušetřit uživatelům další stahování a~prodlevu před možností využívání aplikace.
