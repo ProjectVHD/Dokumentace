@@ -70,7 +70,16 @@ Aplikace pravidelně zjistí aktuální stav a~zobrazí nejnovější informace.
 \end{figure}
 
 \subsection{Práce s~polohou uživatele}
-Aplikace na~požádání od~uživatele získá jeho aktuální polohu a~pro cestujícího v~zobrazí zastávky v~jeho blízkosti.
+Aplikace využívá webového rozhraní geolokace pro získání aktuální polohy uživatele. Proces zahrnuje požádání uživatele polohu využít (viz obr.\ref{geolokace})
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/geolocation_permission.png}
+    \caption{Žádost o povolení}
+    \label{geolokace}
+\end{figure}
+
+S uděleným oprávněním může aplikace pro cestujícího zobrazit zastávky v~jeho blízkosti.
 
 \begin{figure}[H]
     \centering
