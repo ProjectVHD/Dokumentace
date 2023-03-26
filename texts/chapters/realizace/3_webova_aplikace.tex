@@ -1,8 +1,8 @@
 \section{Webová aplikace}
 
-Frontendová část platformy, ve~formě webové aplikace a~aplikace mobilní je hlavní částí platformy, která živá data o~pohybu vozidel komunikuje k~cestujícím.
+Frontendová část platformy, ve~formě webové aplikace a~aplikace mobilní, je hlavní částí platformy, která živá data o~pohybu vozidel komunikuje k~cestujícím.
 
-Využívá přitom komunikace s~Backendem za~pomocí REST + GraphQL API, vše za~využití protokolů HTTPS, nebo WebSocket.
+Využívá přitom komunikace s~Backendem za~pomocí REST + GraphQL API, vše za~využití protokolů HTTPS nebo WebSocket.
 
 Webová aplikace využívá technologie NextJS pro statické generování aplikace na~straně serveru (pro podporu SEO). Webová aplikace využívá za~svého chodu celou řadou doplňujících dotazů přes internet pro~dosažení interaktivity, takzvaných XHR requestů.
 
@@ -11,7 +11,7 @@ Vývojový model webové aplikace dopovídá programovacímu paradigma jednostr�
 \subsection{Mapa}
 Na jednotné mapě se~zobrazují všechni dopravci. Mapu lze ovládat na~mobilních zařízeních pohyby prsty, nebo na~stolních počítačích myší. Podle uživatelského pohledu aplikace vybere dopravce, které by měla zobrazovat, čímž redukuje objem přenášených dat. Do~zařízení uživatele jsou přenášeny pouze data o~vozidlech, které uživatel sleduje.
 
-Pro přehlednost mapa implementuje funkci shlukování vozidel do~bublin (viz obr. \ref{shlukovani}) Shlukování do~bublin zajistí v~aplikaci přehlednost a~plní i~funkci optimalizace výkonu mapy. Při vzdáleném pohledu je funkce plynulé animace pohybu vozidel vypnuta.
+Pro přehlednost mapa implementuje funkci shlukování vozidel do~bublin (viz obr. \ref{shlukovani}). Shlukování do~bublin zajistí v~aplikaci přehlednost a~plní i~funkci optimalizace výkonu mapy. Při vzdáleném pohledu je funkce plynulé animace pohybu vozidel vypnuta.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{images/global_map.png}
@@ -32,7 +32,7 @@ Pro dosažení plynulosti zobrazování využívá aplikace předepsaných prakt
 Informace o detailech spojení jsou na~straně cestujícího ukládána do~cache, aby již nebylo třeba tato data opakovaně načítat. Cache \ref{cache} na~straně webové aplikace šetří uživatelům jejich datové připojení a~zároveň snižují nároky na~vytěžování serveru.
 
 \subsection{Detail spojení}
-Uživatel má po~kliknutí na~jedoucí spoj k~dispozici základní informace o~tomto spoji, např. číslo linky, zpoždění, další zastávka, nebo cílová zastávka (viz obr.\ref{detail332}). Toto vše je vždy individuálně upravitelné pro každý dopravní podnik. Po~rozkliknutí bližšího detailu o~spojení, se~uživateli zobrazí dodatečné informace (viz obr.\ref{detail7})
+Uživatel má po~kliknutí na~jedoucí spoj k~dispozici základní informace o~tomto spoji, např. číslo linky, zpoždění, další zastávka, nebo cílová zastávka (viz obr.\ref{detail332}). Toto vše je vždy individuálně upravitelné pro každý dopravní podnik. Po~rozkliknutí bližšího detailu o~spojení se~uživateli zobrazí dodatečné informace (viz obr.\ref{detail7}).
 
 \begin{figure}[H]
     \centering
@@ -48,7 +48,7 @@ Uživatel má po~kliknutí na~jedoucí spoj k~dispozici základní informace o~t
     \label{detail7}
 \end{figure}
 \newpage
-Současně s~zobrazením bližších informací o~spoji se~zobrazuje také grafická reprezentace trasy, kudy daný spoj pojede, včetně zobrazení zastávek.
+Současně se~zobrazením bližších informací o~spoji, se~zobrazuje také grafická reprezentace trasy, kudy daný spoj pojede. V tomto zobrazení je také možné vidět všechny zastávky na trase.
 
 \begin{figure}[H]
     \centering
