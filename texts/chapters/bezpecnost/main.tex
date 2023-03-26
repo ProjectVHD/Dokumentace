@@ -4,7 +4,7 @@ Bezpečností webových aplikací se~zabývá projekt OWASP \cite{owasp}(Open We
 Tento projekt se~snaží o~řešení těchto bodů. Zde jsou některá navržená řešení.\par
 
 \begin{itemize}
-    \item \textbf{Kryptografické selhání} \cite{crypto}: Backendová i~frontendová část projektu využívají komunikace pomocí šifrovaného protokolu HTTPS. Certifikáty jsou podepsané certifikačními autoritami Let's~Encrypt a~Google Trusted Services.
-    \item \textbf{Injection} \cite{nosqlinjection}: Při práci s uživatelským vstupem je důležitá sanitizace.
+    \item \textbf{Kryptografické selhání} \cite{crypto}: Backendová i~frontendová část projektu využívají komunikace pomocí šifrovaného protokolu HTTPS. Certifikáty jsou podepsané certifikačními autoritami Let's~Encrypt\cite{letsencrypt} a~Google Trusted Services.
+    \item \textbf{Injection} \cite{nosqlinjection}: GraphQL se stará o validitu datových typů při komunikaci mezi frontendem a backendem. Při práci s uživatelským vstupem probíhá důležitá sanitizace, aby se předešlo nosql injection napadení databáze MongoDB.
     \item \textbf{Magic Link Login} \cite{magiclinklogin}: Uživatelé se nepřihlašují pomocí obvyklé kombinace jméno - heslo. Při přihlášení zadávají pouze svůj email. Na tento email je jim následně odeslán časově omezený klíč pro jednorázové přihlášení. Dochází k eliminaci hrozby uniknutí hesla, jelikož není nikde uloženo.
 \end{itemize}
