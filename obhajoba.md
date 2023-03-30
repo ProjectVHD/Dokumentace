@@ -8,11 +8,11 @@ Jsem jedním z autorů tohoto projektu a tvořím jej společně s Jakubem Kacá
 .
 .
 
-Již od jakživa byla doprava nedílnou součástí našeho života.
+Již od jakživa byla doprava nedílnou součástí našeho života, proto jsou vylepšení v dopravě jednou z nejžádanějších inovací.
+Náš projekt se zaměřil na jeden takovýto problém z oblasti dopravy.
 
-Neexistující možnost zkontrolovat aktuální zpoždění, nebo nedostatečné informování cestujících o nečekaných situacích vede k negativní zákaznické zkušenosti.
-
-Upotalo nás, že ve mnoha českých městech stále neexistuje způsob zobrazování aktuálních poloh vozidel MHD.
+Jedním z nejčastějších důvodů frustrace cestujících je nedostatečná informovanost o aktuálním zpoždění a nečekaných situacích na silnici.
+Upoutalo nás, že ve mnoha českých městech stále neexistuje způsob zobrazování aktuálních poloh vozidel MHD.
 (žijeme ve 21. století to je hrůza, musíme s tím něco udělat?)
 
 
