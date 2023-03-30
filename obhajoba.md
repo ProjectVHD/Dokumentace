@@ -8,12 +8,13 @@ Jsem jedním z autorů tohoto projektu a tvořím jej společně s Jakubem Kacá
 .
 .
 
-Již od jakživa byla doprava nedílnou součástí našeho života. Každý nový nový vynález v oblasti dopravy byl ohromným krokem vpřed, až do dnešního dne. Pro zlepšení našeho života, bychom měli usilovat o zvýšení kvality a použitelnosti i veřejné hromadné dopravy.
-// Náš projekt se soustředí právě na tento problém.
+Již od jakživa byla doprava nedílnou součástí našeho života.
+
+Neexistující možnost zkontrolovat aktuální zpoždění, nebo nedostatečné informování cestujících o nečekaných situacích vede k negativní zákaznické zkušenosti.
 
 Upotalo nás, že ve mnoha českých městech stále neexistuje způsob zobrazování aktuálních poloh vozidel MHD.
 (žijeme ve 21. století to je hrůza, musíme s tím něco udělat?)
-Neexistující možnost zkontrolovat aktuální zpoždění, nebo nedostatečné informování cestujících o nečekaných situacích vede k negativní zákaznické zkušenosti.
+
 
 Náš projekt se zaměřuje právě na tento problém.
 
